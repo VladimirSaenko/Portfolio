@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #e1e1e1;
+    /* background: white; */
+    font-family: 'Muli', sans-serif;
+    transition: 1s;
+}
+
+.key {
+    border: 1px solid #999;
+    background-color: #eee;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    display: inline-flex;
+    align-items: center;
+    font-size: 35px;
+    /* font-size: 20px; */
+    font-weight: bold;
+    padding: 20px;
+    flex-direction: column;
+    margin: 10px;
+    min-width: 150px;
+    position: relative;
+}
+
+.key small {
+    position: absolute;
+    top: -30px;
+    text-transform: capitalize;
+    /* top: -24px; */
+    left: 0;
+    text-align: center;
+    width: 100%;
+    color: #555;
+    font-size: 20px;
+    /* font-size: 14px; */
+}
+
+#keyboard {
+    position: absolute;
+    bottom: 25px;
+}
+
+.keyboard-row {
+    display: none;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+}
+  
+.keyboard-row button {
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    height: 3rem;
+    width: 1.8rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background-color: rgb(225, 231, 234);
+    border: #000 2px solid;
+    color: rgb(12, 13, 13);
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+@media screen and (min-width: 300px) and (max-width: 800px) {
+    .keyboard-row {
+        display: flex;
+    }
+
+    .key {
+        margin: 21px;
+    }
+
+    .key small {
+        font-size: 25px;
+        top: -40px;
+    }
+
+    #insert {
+        position: absolute;
+        top: 30px;
+    }
+}

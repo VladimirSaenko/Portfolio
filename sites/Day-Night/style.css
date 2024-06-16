@@ -1,0 +1,224 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#111425,#3751e0);
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.scene::before {
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    transition: 0.5s;
+    background: linear-gradient(transparent,#fff,#2598f3);
+}
+
+.scene.active::before {
+    bottom: 0;
+}
+
+.scene.active {
+    background: linear-gradient(#ffeb3b,#ff9800);
+}
+
+.scene.active .bg {
+    transform: translateY(0);
+}
+
+.scene.active .moon {
+    left: 200px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.5),
+    0 0 40px rgba(255,255,255,0.5),
+    0 0 80px rgba(255,255,255,0.5),
+    0 0 120px rgba(255,255,255,0.3),
+    0 0 180px rgba(255,255,255,0.2),
+    0 0 240px rgba(255,255,255,0.2),
+    0 0 300px rgba(255,255,255,0.1);
+}
+
+.scene.active .moon::before {
+    opacity: 0;
+    /* display: none; */
+}
+
+.moon {
+    position: absolute;
+    top: 100px;
+    left: 400px;
+    width: 250px;
+    height: 250px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.moon::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(#111425,#3751e0);
+    background-attachment: fixed;
+}
+
+.forest {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: scale(1.2);
+    z-index: 100;
+    transition: 0.5s;
+}
+
+.scene.active .forest {
+    bottom: -100%;
+}
+
+.scene i {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: starsSpawn linear infinite;
+}
+
+.scene.active i {
+    display: none;
+}
+
+@keyframes starsSpawn {
+    0% {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    
+    10%, 90% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 0;
+        transform: translateY(-100px);
+        /* transform: translateY(100px); */
+    }
+}
+
+@keyframes animCloud{
+    0% {
+        transform: translateX(-100%) scale(1);
+    }
+    
+    100% {
+        transform: translateX(400%) scale(1.5);
+    }
+}
+
+.cloud1 {
+    position: absolute;
+    max-width: 600px;
+    left: 0;
+    z-index: 100000;
+    animation: animCloud 50s linear infinite;
+}
+
+.cloud2 {
+    position: absolute;
+    max-width: 600px;
+    left: 0;
+    z-index: 100000;
+    animation: animCloud 35s linear infinite;
+}
+
+.cloud3 {
+    position: absolute;
+    max-width: 600px;
+    left: 0;
+    top: 0;
+    z-index: 100000;
+    animation: animCloud 80s linear infinite;
+}
+
+.cloud4 {
+    position: absolute;
+    max-width: 200px;
+    left: 0;
+    top: 200px;
+    z-index: 100000;
+    animation-delay: -20s;
+    animation: animCloud 15s linear infinite;
+}
+
+.cloud5 {
+    position: absolute;
+    max-width: 500px;
+    left: 0;
+    top: 150px;
+    z-index: 100000;
+    animation-delay: -5s;
+    animation: animCloud 40s linear infinite;
+}
+
+.cloud6 {
+    position: absolute;
+    max-width: 400px;
+    left: 0;
+    top: 75px;
+    z-index: 100000;
+    animation-delay: -10s;
+    animation: animCloud 25s linear infinite;
+}
+
+img {
+    pointer-events: none;
+}
+
+.bg {
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    transition: 0.5s;
+    z-index: 1000;
+    transform: translateY(100%);
+}
+
+@media (max-width: 600px) {
+    .moon {
+        position: absolute;
+        top: 50px;
+        left: -25px;
+        width: 250px;
+        height: 250px;
+        background: white;
+        border-radius: 50%;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    
+    .cloud1, .cloud2, .cloud3, .cloud4, .cloud5, .cloud6 {
+        display: none;
+        animation: none;
+        transition: 0s;
+    }
+
+    .bg {
+        width: 100%;
+        height: 400px;
+    }
+}

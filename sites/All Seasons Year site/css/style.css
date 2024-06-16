@@ -1,0 +1,106 @@
+
+* {
+    user-select: none;
+    outline: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    border: 1px solid black;
+    cursor: default;
+    height: 100vh;
+    display: flex;
+    flex-basis: 25%;
+    justify-content: center;
+    align-items: center;
+    background-color: #aeaeae;
+    transition: all 2s;
+}
+
+.item:hover {
+    flex-basis: 70%;
+}
+
+span {
+    color: white;
+    font-size: 70px;
+    text-shadow: 5.5px 10px 1px black;
+}
+
+p {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+.item:hover span {
+    font-size: 100px;
+    transition: 0.5s;
+}
+
+.item-1 {
+    background: url(../img/Summer.jpg) center;
+    background-size: cover;
+}
+
+.item-2 {
+    background: url(../img/Winter.jpg) center;
+    background-size: cover;
+}
+
+.item-3 {
+    background: url(../img/Autumn.jpg) center;
+    background-size: cover;
+}
+
+.item-4 {
+    background: url(../img/Spring.jpg) center;
+    background-size: cover;
+}
+
+.summer {
+    transition: 0.5s;
+    color: inherit;
+}
+
+.summer:hover {
+    transition: 0.5s;
+    color: greenyellow;
+}
+
+.winter {
+    transition: 0.5s;
+    color: inherit;
+}
+
+.winter:hover {
+    color: rgb(22, 22, 235);
+    transition: 0.5s;
+}
+
+.autumn {
+    transition: 0.5s;
+    color: inherit;
+}
+
+.autumn:hover {
+    color: orange;
+    transition: 0.5s;
+}
+
+.spring {
+    transition: 0.5s;
+    color: inherit;
+}
+
+.spring:hover {
+    color: pink;
+    transition: 0.5s;
+}

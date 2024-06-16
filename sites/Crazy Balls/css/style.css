@@ -1,0 +1,34 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+section {
+    height: 100vh;
+    overflow: hidden;
+    /* background: black; */
+    background: #091921;
+}
+
+section span {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+@media screen and (min-width: 300px) and (max-width: 800px) {
+    body {
+        background: #091921;
+    }
+    section {
+        width: 100%;
+    }
+}
